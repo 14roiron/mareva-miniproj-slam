@@ -11,8 +11,8 @@ def init(x0,y0,teta0):
 
 def actualisation(v,w):
 	global vec;
-	vecbruit.append([vec[0][-1]+bruit(v,0,0.5)*np.cos(teta[-1]),vec[1][-1]+bruit(v,0,0.5)*np.sin(teta[-1]),vec[2][-1]+bruit(w,0,0.5)]);
-	vec.append([vec[0][-1]+v*np.cos(teta[-1]),vec[1][-1]+v*np.sin(teta[-1]),vec[2][-1]+w]);
+	vecbruit.append([vec[-1][0]+bruit(v,0,0.5)*np.cos(vec[-1][2]),vec[-1][1]+bruit(v,0,0.5)*np.sin(vec[-1][2]),vec[-1][2]+bruit(w,0,0.5)]);
+	vec.append([vec[-1][0]+v*np.cos(vec[-1][2]),vec[-1][1]+v*np.sin(vec[-1][2]),vec[-1][2]+w]);
 
 def bruit(a,mu,sigma):
 	return a+np.random.normal(mu,sigma);
