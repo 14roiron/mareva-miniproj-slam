@@ -1,8 +1,11 @@
 import matplotlib.pyplot as plt
 
+import numpy as np
 
 plt.ion();
 listGraphs=[]
+robot=plt.scatter(0,0, s=8, c='purple', alpha=0.5)
+
 def getListGraphs():
     return listGraphs
 
@@ -25,16 +28,19 @@ def setGraph(indice,liste):
 
 
 
-def graphDraw():
+def graphDraw(Xrobot,Yrobot):
+    global robot
     colors=0;
     style=0;
     colorTab=['r','b','g','y']
     styleTab=['+',',','.','1','2','3','4'];
+    robot.remove()
+    robot=plt.scatter(Xrobot,Yrobot, s=15, c='purple', alpha=0.5)
     for graph in listGraphs:
         if graph[3] is None:
             if graph[2]:
                 graph[3] = plt.plot(graph[0],graph[1])[0]
-                #plt.setp(lines, color=colorTab[colors], linewidth=0.5) 
+                plt.setp(graph[3], color=colorTab[colors], linewidth=0.5) 
                 colors+=1
             else:
                 graph[3] = plt.plot(graph[0], graph[1], str(colorTab[colors]+styleTab[style]))[0]

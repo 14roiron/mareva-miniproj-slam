@@ -10,8 +10,8 @@ Fichier=open('data'+str(number)+'.txt','rb')
 ameres=pickle.load(Fichier)
 Fichier.close()
 
-deplacement_global=[]
-
+Xrobot=0
+Yrobot=0
 
 if(__name__=="__main__"):
     plt.axis([-20, 20, -10, 30],'equal')
@@ -24,7 +24,9 @@ if(__name__=="__main__"):
         actu.actualisation(1,0.1)
         setGraph(1,actu.vec)
         setGraph(2,actu.vecbruit)
+        Xrobot=actu.vec[-1][0]
+        Yrobot=actu.vec[-1][1]
         #CalculerCapteurs()
         #Dessiner():
-        graphDraw()
+        graphDraw(Xrobot,Yrobot)
     plt.pause(60)
