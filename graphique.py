@@ -33,7 +33,7 @@ def graphDraw(Xrobot,Yrobot):
     colors=0;
     style=0;
     colorTab=['r','b','g','y']
-    styleTab=['+',',','.','1','2','3','4'];
+    styleTab=['+','+','+','1','2','3','4'];
     robot.remove()
     robot=plt.scatter(Xrobot,Yrobot, s=15, c='purple', alpha=0.5)
     for graph in listGraphs:

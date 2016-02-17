@@ -6,7 +6,7 @@ EtatMesure=[]
 def mesureRelativeDesAmeres(VecteurEtat,amers):
     liste=[]
     for amer in amers:
-        liste.append(mesureBruites(VecteurEtat,amer))
+        liste.append(mesureExacte(VecteurEtat,amer))
     return liste
 
 def mesureAbsolueDesAmeres(VecteurEtat,amers):
