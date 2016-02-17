@@ -21,7 +21,7 @@ def mesureAbsolueDesAmeres(VecteurEtat,amers):
 def mesureExacte(vect,amer):
 	v = [];
 	ro = np.sqrt(np.power(vect[0]-amer[0],2)+np.power(vect[1]-amer[1],2));
-	v=[ro,vec[2]-np.arctan2((vect[1]+amer[1]),(vect[0]+amer[0]))*180/np.pi];
+	v=[ro,vect[2]-np.arctan2((vect[1]+amer[1]),(vect[0]+amer[0]))*180/np.pi];
 	if ro>=4:
 		ro=-1;
 	if v[1]>=60 or v[1]<=-60:
