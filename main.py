@@ -1,4 +1,5 @@
 import actualisation as actu
+import mesures as mu
 from graphique import *
 import sys
 import pickle
@@ -19,6 +20,7 @@ if(__name__=="__main__"):
     addGraph(ameres,False)
     addGraph(actu.vec,True)
     addGraph(actu.vecbruit,True)
+    addGraph([],False)
     for i in range(500):
         #CalculerPositions():
         actu.actualisation(1,0.1)
@@ -27,6 +29,8 @@ if(__name__=="__main__"):
         Xrobot=actu.vec[-1][0]
         Yrobot=actu.vec[-1][1]
         #CalculerCapteurs()
+        mu.EtatMesure.append(mu.mesureRelativeDesAmeres(actu.vec[-1],ameres))
+        setGraph(3,mu.mesureAbsolueDesAmeres(actu.vec[-1],ameres))
         #Dessiner():
         graphDraw(Xrobot,Yrobot)
     plt.pause(60)
