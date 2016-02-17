@@ -27,7 +27,7 @@ def mesureExacte(vect,amer):
 def mesureBruites(vect,amer):
 	v = [];
 	ro = bruit(np.sqrt(np.power(vect[0]-amer[0],2)+np.power(vect[1]-amer[1],2)),0,0.5);
-	v=bruit([ro,np.arctan2((vect[1]+amer[1]),(vect[0]+amer[0]))*180/np.pi],0,0.5);
+	v=[ro,bruit(np.arctan2((vect[1]+amer[1]),(vect[0]+amer[0]))*180/np.pi,0,0.5)];
 	return v
 
 def bruit(a,mu,sigma):
