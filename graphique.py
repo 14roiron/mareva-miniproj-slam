@@ -13,15 +13,15 @@ def addGraph(listePoints,liee):
     listGraphs[-1].append([])#y
     listGraphs[-1].append(liee)
     listGraphs[-1].append(None)
-    for (x,y) in listePoints:
-        listGraphs[-1][0].append(x)
-        listGraphs[-1][1].append(y)
+    for pt in listePoints:
+        listGraphs[-1][0].append(pt[0])
+        listGraphs[-1][1].append(pt[1])
 def setGraph(indice,liste):
     listGraphs[indice][0]=[]
     listGraphs[indice][1]=[]
-    for (x,y) in liste:
-        listGraphs[indice][0].append(x)
-        listGraphs[indice][1].append(y)
+    for pt in liste:
+        listGraphs[indice][0].append(pt[0])
+        listGraphs[indice][1].append(pt[1])
 
 
 
@@ -50,7 +50,7 @@ if __name__=="__main__":
     #plt.show()
     #fig = plt.figure()
     #ax = fig.add_subplot(1,1,1)
-    plt.axis([0, 20, 0, 20])
+    plt.axis([-20, 20,-10, 30],'equal')
     b=[]
     addGraph(a,False)
     addGraph(b,True)
