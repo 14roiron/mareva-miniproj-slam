@@ -13,10 +13,13 @@ def mesureAbsolueDesAmeres(VecteurEtat,amers):
     liste=mesureRelativeDesAmeres(VecteurEtat,amers)
     retour=[]
     for (ro,theta) in liste:
-        print("polaire:"+str([ro,theta]))
-        x=VecteurEtat[0]+ro*np.cos(VecteurEtat[2]+theta)
-        y=VecteurEtat[1]+ro*np.sin(VecteurEtat[2]+theta)
-        retour.append([x,y])
+        if ro==-1:
+            pass
+        else:
+            print("polaire:"+str([ro,theta]))
+            x=VecteurEtat[0]+ro*np.cos(VecteurEtat[2]+theta)
+            y=VecteurEtat[1]+ro*np.sin(VecteurEtat[2]+theta)
+            retour.append([x,y])
     return retour    
 
 def mesureExacte(vect,amer):
