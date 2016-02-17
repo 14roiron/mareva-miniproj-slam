@@ -1,8 +1,8 @@
 import actualisation
-import graphique
+from graphique import *
 import sys
 import pickle
-
+import matplotlib.pyplot as plt
 
 
 number=sys.argv[1]
@@ -14,8 +14,13 @@ deplacement_global=[]
 
 
 if(__name__=="__main__"):
-    #CalculerPositions()
-    #CalculerCapteurs()
-    #Dessiner()
+    plt.axis([0, 20, 0, 20])
+    addGraph(ameres,False)
+    addGraph([],True)
+    for i in range(500):
+        #CalculerPositions()
+        #CalculerCapteurs()
+        #Dessiner():
+            graphDraw()
     pass
     
