@@ -21,7 +21,7 @@ def bruit(a,b,mu,sigma):
 		b.append(a[i]+np.random.normal(mu,sigma));
 	
 def main():
-	
+    pass	
 
 		
 		
