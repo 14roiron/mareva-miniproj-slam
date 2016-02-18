@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as pyplot
 
 EtatMesure=[]
-sigmarho=0.5
+sigmarho=0.005
 sigmaalpha=0.03
 def mesureRelativeDesAmeres(VecteurEtat,amers):
     liste=[]
