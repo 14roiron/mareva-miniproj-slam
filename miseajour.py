@@ -61,7 +61,7 @@ def MatriceRk():
         matrice[2*i+1][2*i+1]=me.sigmaalpha**2
     return pre.toMatrix(matrice)
 def MatriceYk():
-    return pre.toMatrix(me.mesureRelativeDesAmeres(actu.vec[-1],m.ameres)) - me.h(actu.actu_kalman(actu.vecKalman),m.ameres)
+    return pre.toMatrix(me.mesureRelativeDesAmeres(actu.vec[-1],m.ameres)) - pre.toMatrix(me.h(actu.actu_kalman(actu.vecKalman),m.ameres))
 
 def MatriceSk():
     return MatriceHk()*pre.Pk()*np.transpose(MatriceHk())+MatriceRk()
