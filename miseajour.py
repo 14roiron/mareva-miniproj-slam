@@ -78,7 +78,9 @@ def nptolist(matrice):
 
 def MiseAjourEtat():
     MatricePk=pre.Pk()
-
+    print(MatriceKk())
+    print(MatriceYk())
+            
     actu.vecKalman[-1]=nptolist(pre.toMatrix(actu.vecKalman[-2])+MatriceKk()*MatriceYk());
     MatricePkk[1]=(np.identity(3+2*len(m.ameres))-MatriceKk()*MatriceHk())*pre.Pk()
     MatricePkk[0]=MatricePkk[1]

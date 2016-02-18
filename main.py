@@ -29,11 +29,11 @@ if(__name__=="__main__"):
     addGraph([],False)#mesure absolue des ameres
     init.touslesamers()
 
-    for i in range(500):
+    for i in range(50):
         #CalculerPositions():
         actu.actualisation(1,0.1)
         maj.MiseAjourEtat()
-        
+        print(actu.vecKalman[-1]) 
         #CalculerCapteurs()
         #print(mu.mesureAbsolueDesAmeres(actu.vec[-1],ameres))
         me.EtatMesure.append(me.mesureRelativeDesAmeres(actu.vec[-1],ameres))
