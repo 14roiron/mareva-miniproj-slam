@@ -1,0 +1,18 @@
+import numpy as np 
+import matplotlib.pyplot as pyplot
+
+def Fk(Xk,Uk):
+	F = [];
+	F[0] = [0]*np.size(Xk);
+	F[0][0] = 1;
+	F[1] = [0]*np.size(Xk);
+	F[1][1] = 1;
+	F[2] = [0]*np.size(Xk);
+	F[2][2] = 1;
+	F[2][0] = -Uk[0]*np.sin(Xk[3]);
+	F[2][0] = Uk[0]*np.cos(Xk[3]);
+	for i in range(3;np.size(Uk)):
+		F[i][i]=1;
+
+def Fuk()
+	
