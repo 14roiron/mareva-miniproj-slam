@@ -32,7 +32,7 @@ def MatriceHk():
     matrice.append([])
     for i in range(len(Ameres)):
         matrice[-1].append(0)
-        matrice[-1].append(1)
+        matrice[-1].append(-1)
 
 
     for i in range(len(Ameres)):
@@ -91,6 +91,12 @@ def MiseAjourEtat():
 #   print(pre.toMatrix(me.mesureRelativeDesAmeres(actu.vec[-1],m.ameres)))
 #   print("yk")
 #   print(MatriceYk())
+    print("Pk:  ")
+    print(pre.Pk())
+    print("Hk  : ")
+    print(MatriceHk())
+    print("Sk  : ")
+    print(MatriceSk())
     actu.vecKalman[-1]=nptolist(pre.toMatrix(actu.actu_kalman(actu.vecKalman))+MatriceKk()*MatriceYk());
     MatricePkk[1]=(np.identity(3+2*len(m.ameres))-MatriceKk()*MatriceHk())*pre.Pk()
     MatricePkk[0]=MatricePkk[1]
