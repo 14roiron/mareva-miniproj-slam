@@ -53,6 +53,14 @@ def bruit(a,mu,sigma):
 def hi(Xk,A):
     return [np.sqrt( np.power(A[0]-Xk[0],2) + np.power(A[1]-Xk[1],2)) , -Xk[2]+np.arctan2((-Xk[1]+A[1]),(-Xk[0]+A[0]))]
 
+def modulopi(angle):
+    angle=angle%(np.pi)
+    if angle>np.pi:
+        angle-=2*np.pi
+    if angle<-np.pi:
+        angle+=2*np.pi
+    return angle
+
 def h(Xk , A):
     H = [0]*2*len(A);
     for i in range(len(A)):
