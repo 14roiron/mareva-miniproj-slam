@@ -12,8 +12,7 @@ u=[0,0]
 def init(x0,y0,teta0):
 	vec.append([x0,y0,teta0]);
 	vecbruit.append([x0,y0,teta0]);
-        vecKalma=(vec[0]+ me.mesureRelativeDesAmeres(vec[0],m.ameres))
-        
+        vecKalman.append(vec[0]+ me.mesureRelativeDesAmeres(vec[0],m.ameres))
 def actualisation(v,w):
         u=[v,w]
 	vecbruit.append([vecbruit[-1][0]+bruit(v,0,0.1)*np.cos(vecbruit[-1][2]),vecbruit[-1][1]+bruit(v,0,0.1)*np.sin(vecbruit[-1][2]),vecbruit[-1][2]+bruit(w,0,0.1)]);

@@ -11,7 +11,7 @@ def toMatrix(A):
 	return np.transpose(np.asmatrix(A))
 
 def Fxk():
-        uk=actu.u
+        Uk=actu.u
         Xk=actu.vecKalman[-2]
 	F = [0]*np.size(Xk);
 	F[0] = [0]*np.size(Xk);
@@ -42,18 +42,22 @@ def Qk():
     	Xk=actu.vecKalman[-2]
         sigma_rho=me.sigmarho
         sigma_alpha=me.sigmaalpha
-        F = Fuk(Xk);
+        F = Fuk();
 	Q = [[sigma_rho,0],[0,sigma_alpha]];
 	Q = np.asmatrix(Q);
-	F_transpose = np.asmatrix(F);
+	F_transpose = toMatrix(F);
 	return np.transpose(F_transpose)*Q*F_transpose
 
 
 def Pk():
-        Pk_1=maj.MatricePk[0]
-        Fxk=Fxk()
-        Qk=Qk()
-	return Fxk*Pk_1*np.transpose(Fxk) + Qk
+        Pk_1=maj.MatricePkk[0]
+        MFxk=Fxk()
+        MQk=Qk()
+        #print("d")
+        #print(MFxk)
+        #print(Pk_1)
+        #print(MQk)
+	return MFxk*Pk_1#*np.transpose(MFxk) + MQk
 
 if __name__ == '__main__':
 	pass

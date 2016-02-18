@@ -28,7 +28,6 @@ if(__name__=="__main__"):
     addGraph(actu.vecKalman,True)
     addGraph([],False)#mesure absolue des ameres
     init.touslesamers()
-    print(maj.MatricePkk)
 
     for i in range(500):
         #CalculerPositions():
@@ -44,8 +43,8 @@ if(__name__=="__main__"):
         setGraph(3,actu.vecKalman)
         Xrobot=actu.vec[-1][0]
         Yrobot=actu.vec[-1][1]
-        setGraph(4,mu.mesureAbsolueDesAmeres(actu.vec[-1],ameres))
+        setGraph(4,me.mesureAbsolueDesAmeres(actu.vec[-1],ameres))
         graphDraw(Xrobot,Yrobot)
 
-
+    plt.show()
     plt.pause(60)
