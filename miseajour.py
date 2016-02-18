@@ -57,8 +57,8 @@ def MatriceRk():
     for i in range(2*len(Ameres)):
         matrice.append(2*len(Ameres)*[0])
     for i in range(len(Ameres)):
-        matrice[2*i][2*i]=me.sigmarho
-        matrice[2*i+1][2*i+1]=me.sigmaalpha
+        matrice[2*i][2*i]=me.sigmarho**2
+        matrice[2*i+1][2*i+1]=me.sigmaalpha**2
     return pre.toMatrix(matrice)
 def MatriceYk():
     return pre.toMatrix(me.mesureRelativeDesAmeres(actu.vec[-1],m.ameres)) - me.h(actu.actu_kalman(actu.vecKalman),m.ameres)
