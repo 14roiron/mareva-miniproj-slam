@@ -67,13 +67,13 @@ def MatriceSk():
     return MatriceHk()*pre.Pk()*np.transpose(MatriceHk())+MatriceRk()
 
 def MatriceKk():
-    return Pk()*np.transpose(MatriceHk())*np.linalg.inv(MatriceSk())
+    return MatricePk*np.transpose(MatriceHk())*np.linalg.inv(MatriceSk())
 
 def MiseAjourEtat():
-    actu.vecKalman[-1]=actua.vecKalman[-2]+MatriceKk()*MatriceYk()
+    actu.vecKalman[-1]=np.asarray(pre.toMatrix(actu.vecKalman[-2])+MatriceKk()*MatriceYk())
     MatricePk[1]=(np.identity(3+2*np.size(m.ameres))-MatriceKk()*MatriceHk())*MatricePk[0]
     MatricePk[0]=MatricePk[1]
 
 
 if __name__=="__main__":
-
+    MiseAjourEtat()

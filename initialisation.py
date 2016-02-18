@@ -1,10 +1,15 @@
 import numpy as np
 import mesures as me
 import prediction as pre
+import actualisation as actu
+import main as m
+import miseajour as maj
 
-def touslesamers(Z0):
-	global sigmaalpha
-	global sigmarho
+
+def touslesamers():
+        sigmaalpha=me.sigmaalpha
+	sigmarho=me.sigmarho
+        Z0=me.mesureRelativeDesAmeres(actu.vec[0],m.ameres)
 	P = [0.]*(3+np.size(Z0));
 	for i in range(0,3+np.size(Z0)):
 		P[i] = [0.]*(3+np.size(Z0));
@@ -18,7 +23,7 @@ def touslesamers(Z0):
 		P[3+i,4+i] = Q[0,1];
 		P[4+i,3+i] = Q[1,0];
 		P[4+i,4+i] = Q[1,1];
-	return P
+        maj.MatricePk[0]=P
 
 if __name__ == '__main__':
 	pass

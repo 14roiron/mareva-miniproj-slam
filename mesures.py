@@ -7,13 +7,17 @@ sigmaalpha=0.03
 def mesureRelativeDesAmeres(VecteurEtat,amers):
     liste=[]
     for amer in amers:
-        liste.append(mesureBruites(VecteurEtat,amer))
+        mesure=(mesureBruites(VecteurEtat,amer))
+        liste.append(mesure[0])
+        liste.append(mesure[1])
     return liste
 
 def mesureAbsolueDesAmeres(VecteurEtat,amers):
     liste=mesureRelativeDesAmeres(VecteurEtat,amers)
     retour=[]
-    for (ro,theta) in liste:
+    for i in range(len(liste)/2):
+        ro=liste[2*i]
+        theta=liste[2*i+1]
         if ro==-1:
             pass
         else:
