@@ -43,6 +43,8 @@ if(__name__=="__main__"):
         setGraph(3,actu.vecKalman)
         Xrobot=actu.vec[-1][0]
         Yrobot=actu.vec[-1][1]
+        setGraph(4,me.mesureAbsolueDesAmeres(actu.vec[-1],ameres))
+        print(actu.vecKalman[-1][2])#*180/np.pi)
         #setGraph(4,me.mesureAbsolueDesAmeres2(actu.vecKalman[-1][3:]))
         #setGraph(4,me.mesureAbsolueDesAmeres(actu.vec[-1],ameres))
         graphDraw(Xrobot,Yrobot)
