@@ -1,6 +1,6 @@
 import numpy as np 
 import matplotlib.pyplot as pyplot
-
+import actualisation as actu
 EtatMesure=[]
 sigmarho=0.005
 sigmaalpha=0.03
@@ -14,6 +14,22 @@ def mesureRelativeDesAmeres(VecteurEtat,amers):
 
 def mesureAbsolueDesAmeres(VecteurEtat,amers):
     liste=mesureRelativeDesAmeres(VecteurEtat,amers)
+    retour=[]
+    for i in range(len(liste)/2):
+        ro=liste[2*i]
+        theta=liste[2*i+1]
+        if ro==-1:
+            pass
+        else:
+            #print("polaire:"+str([ro,theta]))
+            x=VecteurEtat[0]+ro*np.cos(VecteurEtat[2]+theta)
+            y=VecteurEtat[1]+ro*np.sin(VecteurEtat[2]+theta)
+            retour.append([x,y])
+    return retour    
+
+def mesureAbsolueDesAmeres2(VecteurEtat):
+    liste=VecteurEtat[3:]
+    VecteurEtat=actu.vec[-1]
     retour=[]
     for i in range(len(liste)/2):
         ro=liste[2*i]

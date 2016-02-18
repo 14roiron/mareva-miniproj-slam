@@ -36,14 +36,15 @@ if(__name__=="__main__"):
         #print(actu.vecKalman[-1]) 
         #CalculerCapteurs()
         #print(mu.mesureAbsolueDesAmeres(actu.vec[-1],ameres))
-        me.EtatMesure.append(me.mesureRelativeDesAmeres(actu.vec[-1],ameres))
+        #  me.EtatMesure.append(me.mesureRelativeDesAmeres(actu.vec[-1],ameres))
         #Dessiner():
         setGraph(1,actu.vec)
         setGraph(2,actu.vecbruit)
         setGraph(3,actu.vecKalman)
         Xrobot=actu.vec[-1][0]
         Yrobot=actu.vec[-1][1]
-        setGraph(4,me.mesureAbsolueDesAmeres(actu.vec[-1],ameres))
+        setGraph(4,me.mesureAbsolueDesAmeres2(actu.vecKalman[-1][3:]))
+        #setGraph(4,me.mesureAbsolueDesAmeres(actu.vec[-1],ameres))
         graphDraw(Xrobot,Yrobot)
 
     plt.show()
