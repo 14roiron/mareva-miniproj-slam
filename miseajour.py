@@ -2,16 +2,19 @@ import numpy as np
 import prediction as pre
 import mesures as me
 import actualisation as actu
+import main as m
+import numpy as np
 
 
 
 
+MatricePk=[[],[]]
 
 
 
-
-
-def MatriceHk(Xk,Ameres):
+def MatriceHk():
+    Xk=actu.vecKalman[-2]
+    Ameres=m.ameres
     taille=np.size(Xk)+np.size(Ameres)
     matrice=[]
     matrice.append([])
@@ -46,12 +49,10 @@ def MatriceHk(Xk,Ameres):
 
     return pre.toMatrix(matrice)   
 
-def MatriceYk(Xk)
-    return me.mesureRelativeDesAmeres(actu.)
 
 
-
-def MatriceRk(Ameres):
+def MatriceRk():
+    Ameres=m.ameres
     matrice=[]
     for i in range(2*np.size(Ameres)):
         matrice.append(2*np.size(Ameres)*[0])
@@ -59,3 +60,20 @@ def MatriceRk(Ameres):
         matrice[2*i][2*i]=me.sigmarho
         matrice[2*i+1][2*i+1]=me.sigmaalpha
     return pre.toMatrix(matrice)
+def MatriceYk():
+    return pre.toMatrix(me.mesureRelativeDesAmeres(actu.vec[-1],m.ameres)) - MatriceHk()*pre.toMatrix(actu.vecKalman[-2])
+
+def MatriceSk():
+    return MatriceHk()*pre.Pk()*np.transpose(MatriceHk())+MatriceRk()
+
+def MatriceKk():
+    return Pk()*np.transpose(MatriceHk())*np.linalg.inv(MatriceSk())
+
+def MiseAjourEtat():
+    actu.vecKalman[-1]=actua.vecKalman[-2]+MatriceKk()*MatriceYk()
+    MatricePk[1]=(np.identity(3+2*np.size(m.ameres))-MatriceKk()*MatriceHk())*MatricePk[0]
+    MatricePk[0]=MatricePk[1]
+
+
+if __name__=="__main__":
+
