@@ -29,7 +29,7 @@ if(__name__=="__main__"):
     addGraph([],False)#mesure absolue des ameres
     init.touslesamers()
 
-    for i in range(1):
+    for i in range(20):
         #CalculerPositions():
         actu.actualisation(1,0.1)
         maj.MiseAjourEtat()
@@ -43,7 +43,9 @@ if(__name__=="__main__"):
         setGraph(3,actu.vecKalman)
         Xrobot=actu.vec[-1][0]
         Yrobot=actu.vec[-1][1]
-        setGraph(4,me.mesureAbsolueDesAmeres2(actu.vecKalman[-1][3:]))
+        setGraph(4,me.mesureAbsolueDesAmeres(actu.vec[-1],ameres))
+        print(actu.vecKalman[-1][2])#*180/np.pi)
+        #setGraph(4,me.mesureAbsolueDesAmeres2(actu.vecKalman[-1][3:]))
         #setGraph(4,me.mesureAbsolueDesAmeres(actu.vec[-1],ameres))
         graphDraw(Xrobot,Yrobot)
 

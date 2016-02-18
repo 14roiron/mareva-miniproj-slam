@@ -21,8 +21,8 @@ def Fxk():
 	F[1][1] = 1;
 	F[2] = [0]*np.size(Xk);
 	F[2][2] = 1;
-	F[2][0] = -Uk[0]*np.sin(Xk[3]);
-	F[2][1] = Uk[0]*np.cos(Xk[3]);
+	F[2][0] = -Uk[0]*np.sin(Xk[2]);
+	F[2][1] = Uk[0]*np.cos(Xk[2]);
 	for i in range(3,np.size(Xk)):
 		F[i] = [0]*np.size(Xk);
 		F[i][i]=1;
@@ -41,8 +41,8 @@ def Fuk():
 
 def Qk():
     	Xk=actu.vecKalman[-2]
-        sigma_rho=me.sigmarho
-        sigma_alpha=me.sigmaalpha
+        sigma_rho=actu.sigmav
+        sigma_alpha=actu.sigmaw
         F = Fuk();
 	Q = [[sigma_rho,0],[0,sigma_alpha]];
 	Q = np.asmatrix(Q);
