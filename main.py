@@ -33,7 +33,7 @@ if(__name__=="__main__"):
         #CalculerPositions():
         actu.actualisation(1,0.1)
         maj.MiseAjourEtat()
-        print(actu.vecKalman[-1]) 
+        #print(actu.vecKalman[-1]) 
         #CalculerCapteurs()
         #print(mu.mesureAbsolueDesAmeres(actu.vec[-1],ameres))
         me.EtatMesure.append(me.mesureRelativeDesAmeres(actu.vec[-1],ameres))
