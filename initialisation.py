@@ -19,11 +19,11 @@ def touslesamers():
 	for i in range(0,np.size(Z0)/2):
 		J[i] = pre.toMatrix([[np.cos(Z0[2*i+1]) , np.sin(Z0[2*i+1])],[-Z0[2*i]*np.sin(Z0[2*i+1]) , Z0[2*i]*np.cos(Z0[2*i+1])]]);
 		Q = J[i]*R*np.transpose(J[i]);
-		P[3+i,3+i] = Q[0,0];
-		P[3+i,4+i] = Q[0,1];
-		P[4+i,3+i] = Q[1,0];
-		P[4+i,4+i] = Q[1,1];
-        maj.MatricePk[0]=P
+		P[3+2*i,3+i*2] = Q[0,0];
+		P[3+2*i,4+i*2] = Q[0,1];
+		P[4+2*i,3+i*2] = Q[1,0];
+		P[4+2*i,4+i*2] = Q[1,1];
+        maj.MatricePkk[0]=P
 
 if __name__ == '__main__':
 	pass

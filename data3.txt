@@ -1,0 +1,11 @@
+(lp0
+(lp1
+I-3
+aI15
+aa(lp2
+I-2
+aI9
+aa(lp3
+I0
+aI15
+aa.

@@ -1,0 +1,8 @@
+(lp0
+(lp1
+I14
+aI21
+aa(lp2
+I15
+aI-1
+aa.

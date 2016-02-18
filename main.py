@@ -1,5 +1,5 @@
 import actualisation as actu
-import mesures as mu
+import mesures as me
 import prediction as pre
 import miseajour as maj
 import initialisation as init 
@@ -8,8 +8,10 @@ import sys
 import pickle
 import matplotlib.pyplot as plt
 
-
-number=sys.argv[1]
+if len(sys.argv)>1:
+   number=sys.argv[1]
+else: 
+    number=0
 Fichier=open('data'+str(number)+'.txt','rb')
 ameres=pickle.load(Fichier)
 Fichier.close()
@@ -26,22 +28,23 @@ if(__name__=="__main__"):
     addGraph(actu.vecKalman,True)
     addGraph([],False)#mesure absolue des ameres
     init.touslesamers()
+    print(maj.MatricePkk)
 
     for i in range(500):
         #CalculerPositions():
         actu.actualisation(1,0.1)
         maj.MiseAjourEtat()
         
+        #CalculerCapteurs()
+        #print(mu.mesureAbsolueDesAmeres(actu.vec[-1],ameres))
+        me.EtatMesure.append(me.mesureRelativeDesAmeres(actu.vec[-1],ameres))
+        #Dessiner():
         setGraph(1,actu.vec)
         setGraph(2,actu.vecbruit)
         setGraph(3,actu.vecKalman)
         Xrobot=actu.vec[-1][0]
         Yrobot=actu.vec[-1][1]
-        #CalculerCapteurs()
-        mu.EtatMesure.append(mu.mesureRelativeDesAmeres(actu.vec[-1],ameres))
         setGraph(4,mu.mesureAbsolueDesAmeres(actu.vec[-1],ameres))
-        #print(mu.mesureAbsolueDesAmeres(actu.vec[-1],ameres))
-        #Dessiner():
         graphDraw(Xrobot,Yrobot)
 
 
