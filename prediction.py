@@ -54,7 +54,7 @@ def Pk():
         Pk_1=maj.MatricePkk[0]
         MFxk=Fxk()
         MQk=Qk()
-	return MFxk*Pk_1*np.transpose(MFxk) + 0.000001*MQk
+	return MFxk*Pk_1*np.transpose(MFxk) + MQk
 
 if __name__ == '__main__':
 	pass

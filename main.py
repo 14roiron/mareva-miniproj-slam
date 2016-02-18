@@ -29,7 +29,7 @@ if(__name__=="__main__"):
     addGraph([],False)#mesure absolue des ameres
     init.touslesamers()
 
-    for i in range(25):
+    for i in range(1):
         #CalculerPositions():
         actu.actualisation(1,0.1)
         maj.MiseAjourEtat()
