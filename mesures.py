@@ -56,8 +56,8 @@ def hi(Xk,A):
 def h(Xk , A):
     H = [0]*2*len(A);
     for i in range(len(A)):
-        H[2*i]=hi(Xk,A)[0]
-        H[2*i+1] = hi(Xk,A)[1]
+        H[2*i]=hi(Xk,A[i])[0]
+        H[2*i+1] = hi(Xk,A[i])[1]
     return H
 
 if __name__ == '__main__':
