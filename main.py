@@ -1,5 +1,7 @@
 import actualisation as actu
 import mesures as mu
+import prediction as pre
+import miseajour as maj
 from graphique import *
 import sys
 import pickle
@@ -34,4 +36,6 @@ if(__name__=="__main__"):
         #print(mu.mesureAbsolueDesAmeres(actu.vec[-1],ameres))
         #Dessiner():
         graphDraw(Xrobot,Yrobot)
+
+
     plt.pause(60)

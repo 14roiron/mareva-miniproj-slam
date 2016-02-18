@@ -4,6 +4,7 @@ import matplotlib.pyplot as pyplot
 
 vec = [];
 vecbruit = [];
+vecKalman=[]
 
 def init(x0,y0,teta0):
 	vec.append([x0,y0,teta0]);
