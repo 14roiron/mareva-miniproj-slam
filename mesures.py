@@ -51,7 +51,7 @@ def bruit(a,mu,sigma):
 	return a+np.random.normal(mu,sigma);
 
 def hi(Xk,A):
-    return [np.sqrt( power(A[0]-Xk[0],2) + power(A[1]-Xk[1],2)) , -Xk[2]+np.arctan2((-Xk[1]+A[1]),(-Xk[0]+A[0]))]
+    return [np.sqrt( np.power(A[0]-Xk[0],2) + np.power(A[1]-Xk[1],2)) , -Xk[2]+np.arctan2((-Xk[1]+A[1]),(-Xk[0]+A[0]))]
 
 def h(Xk , A):
     H = [0]*2*len(A);

@@ -61,7 +61,8 @@ def MatriceRk():
         matrice[2*i+1][2*i+1]=me.sigmaalpha
     return pre.toMatrix(matrice)
 def MatriceYk():
-    return pre.toMatrix(me.mesureRelativeDesAmeres(actu.vec[-1],m.ameres)) - h(actu.actu_kalman(actu.vecKalman),m.ameres)
+    print(me.h(actu.actu_kalman(actu.vecKalman),m.ameres))
+    return pre.toMatrix(me.mesureRelativeDesAmeres(actu.vec[-1],m.ameres)) - me.h(actu.actu_kalman(actu.vecKalman),m.ameres)
 
 def MatriceSk():
     return MatriceHk()*pre.Pk()*np.transpose(MatriceHk())+MatriceRk()
@@ -78,6 +79,9 @@ def nptolist(matrice):
 
 def MiseAjourEtat():
     MatricePk=pre.Pk()
+    print("zk")
+    print(pre.toMatrix(me.mesureRelativeDesAmeres(actu.vec[-1],m.ameres)))
+    print("yk")
     print(MatriceYk())
     actu.vecKalman[-1]=nptolist(pre.toMatrix(actu.actu_kalman(actu.vecKalman))+MatriceKk()*MatriceYk());
     MatricePkk[1]=(np.identity(3+2*len(m.ameres))-MatriceKk()*MatriceHk())*pre.Pk()
