@@ -7,7 +7,7 @@ sigmaalpha=0.05
 def mesureRelativeDesAmeres(VecteurEtat,amers):
     liste=[]
     for amer in amers:
-        mesure=(mesureExacte(VecteurEtat,amer))
+        mesure=(mesureBruites(VecteurEtat,amer))
         liste.append(mesure[0])
         liste.append(mesure[1])
     return liste

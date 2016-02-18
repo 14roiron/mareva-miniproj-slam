@@ -26,12 +26,12 @@ if(__name__=="__main__"):
     addGraph(actu.vec,True)
     addGraph(actu.vecbruit,True)
     addGraph(actu.vecKalman,True)
-    #addGraph([],False)#mesure absolue des ameres
+    addGraph([],False)#mesure absolue des ameres
     init.touslesamers()
 
-    for i in range(100):
+    for i in range(3000):
         #CalculerPositions():
-        actu.actualisation(1,0.1)
+        actu.actualisation(0.1,0.01)
         maj.MiseAjourEtat()
         #print(actu.vecKalman[-1]) 
         #CalculerCapteurs()

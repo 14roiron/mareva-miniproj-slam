@@ -6,7 +6,7 @@ vec = [];
 vecbruit = [];
 vecKalman=[]
 
-sigmav=0.1
+sigmav=0.03
 sigmaw=0.05
 u=[0,0]
 ub=[0,0]
