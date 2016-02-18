@@ -26,10 +26,10 @@ if(__name__=="__main__"):
     addGraph(actu.vec,True)
     addGraph(actu.vecbruit,True)
     addGraph(actu.vecKalman,True)
-    addGraph([],False)#mesure absolue des ameres
+    #addGraph([],False)#mesure absolue des ameres
     init.touslesamers()
 
-    for i in range(1):
+    for i in range(100):
         #CalculerPositions():
         actu.actualisation(1,0.1)
         maj.MiseAjourEtat()
@@ -43,7 +43,7 @@ if(__name__=="__main__"):
         setGraph(3,actu.vecKalman)
         Xrobot=actu.vec[-1][0]
         Yrobot=actu.vec[-1][1]
-        setGraph(4,me.mesureAbsolueDesAmeres2(actu.vecKalman[-1][3:]))
+        #setGraph(4,me.mesureAbsolueDesAmeres2(actu.vecKalman[-1][3:]))
         #setGraph(4,me.mesureAbsolueDesAmeres(actu.vec[-1],ameres))
         graphDraw(Xrobot,Yrobot)
 
