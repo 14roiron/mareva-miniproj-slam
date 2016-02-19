@@ -71,10 +71,10 @@ def MatriceYk():
     Y = [0]*len(A)
     for i in range(len(A)):
         Y [i] = A[i] - B[i]
-        print("ameres")
-        print(A[i])
-        print("B")
-        print(B[i])
+#        print("ameres")
+#       print(A[i])
+#        print("B")
+#        print(B[i])
     for i in range(len(Y)/2):
         Y[2*i+1] = me.modulopi(Y[2*i+1])
     Y = pre.toMatrix(Y)
@@ -100,12 +100,12 @@ def MiseAjourEtat():
 #   print(pre.toMatrix(me.mesureRelativeDesAmeres(actu.vec[-1],m.ameres)))
 #   print("yk")
 #   print(MatriceYk())
-    print("Xk-1")
-    print(actu.actu_kalman(actu.vecKalman))
-    print("K")
-    print(MatriceKk())
-    print("y")
-    print(MatriceYk())
+#    print("Xk-1")
+#   print(actu.actu_kalman(actu.vecKalman))
+#    print("K")
+#    print(MatriceKk())
+#    print("y")
+#    print(MatriceYk())
     actu.vecKalman[-1]=nptolist(pre.toMatrix(actu.actu_kalman(actu.vecKalman))+MatriceKk()*MatriceYk());
     MatricePkk[1]=(np.identity(3+2*len(m.ameres))-MatriceKk()*MatriceHk())*pre.Pk()
     MatricePkk[0]=MatricePkk[1]
